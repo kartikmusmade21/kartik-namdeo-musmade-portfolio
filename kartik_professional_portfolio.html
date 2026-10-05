@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kartik Namdeo Musmade - MCA Student, Data Science & AI Enthusiast Portfolio" />
+  <title>Kartik Namdeo Musmade | Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#0f172a",
+            brand: "#6366f1",
+            accent: "#06b6d4"
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(99,102,241,.18)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, sans-serif; }
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(99,102,241,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,.07) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg,#6366f1,#06b6d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glass { background: rgba(255,255,255,.78); backdrop-filter: blur(14px); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .skill-fill { width: 0; transition: width 1.2s ease; }
+    .card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .card:hover { transform: translateY(-7px); box-shadow: 0 18px 45px rgba(15,23,42,.10); }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content:""; position:absolute; left:0; bottom:-7px; width:0; height:2px;
+      background:#6366f1; transition:width .25s ease;
+    }
+    .nav-link:hover::after { width:100%; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/70">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#home" class="font-extrabold text-xl tracking-tight">
+        Kartik<span class="text-indigo-600">.</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="hidden sm:inline-flex bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-indigo-600 transition">
+        Let's Connect
+      </a>
+
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-slate-200" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white">
+      <div class="px-5 py-4 flex flex-col gap-4 font-semibold">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center overflow-hidden hero-grid pt-24">
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-indigo-300/30 blur-3xl rounded-full"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-cyan-300/25 blur-3xl rounded-full"></div>
+
+      <div class="max-w-6xl mx-auto px-5 py-20 grid lg:grid-cols-2 gap-14 items-center relative z-10">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-indigo-100 shadow-sm text-sm font-semibold text-indigo-700 mb-6">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Open to opportunities
+          </div>
+
+          <p class="uppercase tracking-[.22em] text-sm font-bold text-slate-500 mb-4">Hello, I'm</p>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.02] tracking-tight">
+            Kartik<br><span class="gradient-text">Namdeo Musmade</span>
+          </h1>
+
+          <p class="mt-6 text-xl sm:text-2xl font-semibold text-slate-700">
+            MCA Student • Data Science • AI/ML Enthusiast
+          </p>
+
+          <p class="mt-5 max-w-xl text-slate-600 leading-8">
+            I enjoy turning ideas into practical technology solutions and continuously
+            improving my skills through projects, internships and hands-on learning.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20">
+              View Projects →
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-white border border-slate-300 font-bold hover:border-indigo-400 hover:text-indigo-600 transition">
+              Contact Me
+            </a>
+          </div>
+
+          <div class="mt-9 flex gap-5 text-sm font-semibold">
+            <a class="text-slate-500 hover:text-indigo-600" href="http://github.com/kartikmusmade21" target="_blank">GitHub ↗</a>
+            <a class="text-slate-500 hover:text-indigo-600" href="https://www.linkedin.com/in/kartik-musmade-b46902295/" target="_blank">LinkedIn ↗</a>
+            <a class="text-slate-500 hover:text-pink-600" href="https://www.instagram.com/kartik_namdeo_musmade_/" target="_blank">Instagram ↗</a>
+          </div>
+        </div>
+
+        <div class="reveal flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-r from-indigo-500/20 to-cyan-400/20 blur-2xl"></div>
+            <div class="relative bg-white p-3 rounded-[2rem] shadow-2xl border border-slate-200 max-w-md">
+              <img src="my photo1.jpg" alt="Professional portrait of Kartik Namdeo Musmade"
+                   class="w-full aspect-[4/5] object-cover rounded-[1.5rem]">
+            </div>
+
+            <div class="absolute -left-6 bottom-10 bg-white rounded-2xl shadow-xl border border-slate-200 px-5 py-4">
+              <p class="text-xs text-slate-500">Based in</p>
+              <p class="font-extrabold">Maharashtra, India</p>
+            </div>
+
+            <div class="absolute -right-5 top-10 bg-slate-900 text-white rounded-2xl shadow-xl px-5 py-4">
+              <p class="text-xs text-slate-400">Focus</p>
+              <p class="font-extrabold">AI • Data • Tech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="max-w-3xl reveal">
+          <p class="text-indigo-600 font-bold uppercase tracking-widest text-sm">About Me</p>
+          <h2 class="mt-3 text-4xl font-extrabold tracking-tight">Building skills today for a stronger career tomorrow.</h2>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 card bg-slate-50 rounded-3xl p-8 border border-slate-200 reveal">
+            <p class="text-lg leading-8 text-slate-600">
+              I'm Kartik Namdeo Musmade from Deolali Pravara. I am pursuing my MCA and
+              have a strong interest in data, artificial intelligence, software and practical
+              problem-solving. I believe in continuous learning and prefer learning by
+              building real projects.
+            </p>
+            <p class="mt-5 text-lg leading-8 text-slate-600">
+              My goal is to start a strong technology career, contribute to meaningful
+              projects and keep developing my technical and professional skills.
+            </p>
+          </div>
+
+          <div class="card bg-slate-900 text-white rounded-3xl p-8 reveal">
+            <p class="text-indigo-300 font-bold mb-6">Quick Facts</p>
+            <div class="space-y-5 text-sm">
+              <div><span class="text-slate-400">Education</span><p class="font-bold mt-1">MCA — Pursuing</p></div>
+              <div><span class="text-slate-400">Languages</span><p class="font-bold mt-1">English • Hindi • Marathi</p></div>
+              <div><span class="text-slate-400">Location</span><p class="font-bold mt-1">Deolali Pravara, Maharashtra</p></div>
+              <div><span class="text-slate-400">Interests</span><p class="font-bold mt-1">Technology • Learning • Projects</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-indigo-600 font-bold uppercase tracking-widest text-sm">Skills</p>
+          <h2 class="mt-3 text-4xl font-extrabold">Technical toolkit</h2>
+          <p class="mt-4 text-slate-600">A practical mix of programming, data, web and productivity skills.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
+            <h3 class="font-extrabold text-lg">Programming</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
+            <h3 class="font-extrabold text-lg">Data & AI/ML</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">EDA</span><span class="tag">Machine Learning</span>
+            </div>
+          </div>
+          <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
+            <h3 class="font-extrabold text-lg">Web Development</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+            </div>
+          </div>
+          <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
+            <h3 class="font-extrabold text-lg">Tools</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Excel</span><span class="tag">WordPress</span>
+            </div>
+          </div>
+          <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
+            <h3 class="font-extrabold text-lg">Database</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">phpMyAdmin</span>
+            </div>
+          </div>
+          <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
+            <h3 class="font-extrabold text-lg">Professional</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Problem Solving</span><span class="tag">Adaptability</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 max-w-3xl mx-auto space-y-5 reveal">
+          <div>
+            <div class="flex justify-between text-sm font-bold mb-2"><span>Python & Data</span><span>Learning</span></div>
+            <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="skill-fill h-full bg-indigo-600 rounded-full" data-width="82%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-bold mb-2"><span>Web Development</span><span>Working Knowledge</span></div>
+            <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="skill-fill h-full bg-cyan-500 rounded-full" data-width="78%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm font-bold mb-2"><span>Problem Solving</span><span>Strong</span></div>
+            <div class="h-2 bg-slate-200 rounded-full overflow-hidden"><div class="skill-fill h-full bg-violet-600 rounded-full" data-width="80%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="reveal">
+          <p class="text-indigo-600 font-bold uppercase tracking-widest text-sm">Experience</p>
+          <h2 class="mt-3 text-4xl font-extrabold">Experience & learning</h2>
+          <p class="mt-4 text-slate-600 max-w-2xl">Practical exposure through internships and hands-on work.</p>
+        </div>
+
+        <div class="mt-12 border-l-2 border-indigo-100 ml-3 space-y-10">
+          <div class="relative pl-8 reveal">
+            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-indigo-600 ring-8 ring-indigo-50"></span>
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7">
+              <div class="flex flex-wrap justify-between gap-3">
+                <h3 class="text-xl font-extrabold">LLM / AI Internship Experience</h3>
+                <span class="text-sm font-bold text-indigo-600">2026</span>
+              </div>
+              <p class="mt-2 text-slate-600">
+                Worked on practical AI-related tasks including prompt-based image comparison
+                and video colour identification workflows while gaining exposure to LLM-supported tasks.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative pl-8 reveal">
+            <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-cyan-500 ring-8 ring-cyan-50"></span>
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7">
+              <div class="flex flex-wrap justify-between gap-3">
+                <h3 class="text-xl font-extrabold">Computer Instructor</h3>
+                <span class="text-sm font-bold text-cyan-600">1.5 Years</span>
+              </div>
+              <p class="mt-1 font-semibold text-slate-700">New Excellent Computer & IT Center, Deolali Pravara</p>
+              <p class="mt-3 text-slate-600">
+                Guided learners in computer fundamentals, software usage and practical digital skills.
+                Developed communication, training and problem-solving abilities through day-to-day instruction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="reveal">
+          <p class="text-indigo-600 font-bold uppercase tracking-widest text-sm">Projects</p>
+          <h2 class="mt-3 text-4xl font-extrabold">Things I've built</h2>
+          <p class="mt-4 text-slate-600 max-w-2xl">Selected academic and practical projects that demonstrate my skills.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <article class="card bg-white rounded-3xl p-8 border border-slate-200 reveal">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 grid place-items-center text-xl font-black">01</div>
+            <h3 class="mt-6 text-2xl font-extrabold">Advocate Diary Management System</h3>
+            <p class="mt-3 text-slate-600 leading-7">
+              A web-based management solution designed to organize advocate-related diary
+              information and simplify day-to-day record handling.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+            </div>
+          </article>
+
+          <article class="card bg-white rounded-3xl p-8 border border-slate-200 reveal">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 grid place-items-center text-xl font-black">02</div>
+            <h3 class="mt-6 text-2xl font-extrabold">BMI Calculator Application</h3>
+            <p class="mt-3 text-slate-600 leading-7">
+              A Python desktop application for calculating BMI with a simple interface and
+              SQLite-based data storage.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">SQLite</span>
+            </div>
+          </article>
+
+          <article class="card bg-white rounded-3xl p-8 border border-slate-200 reveal">
+            <div class="w-12 h-12 rounded-2xl bg-violet-100 text-violet-700 grid place-items-center text-xl font-black">03</div>
+            <h3 class="mt-6 text-2xl font-extrabold">Resume Analyzer</h3>
+            <p class="mt-3 text-slate-600 leading-7">
+              A project focused on analysing resume information and presenting useful insights
+              for improving job-readiness.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="tag">Python</span><span class="tag">Data</span><span class="tag">NLP/AI</span>
+            </div>
+          </article>
+
+          <article class="card bg-white rounded-3xl p-8 border border-slate-200 reveal">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 grid place-items-center text-xl font-black">04</div>
+            <h3 class="mt-6 text-2xl font-extrabold">Smart B2B Marketplace</h3>
+            <p class="mt-3 text-slate-600 leading-7">
+              A final-year software project concept combining a B2B marketplace with digital
+              product passport and supply-chain traceability ideas.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="tag">Web</span><span class="tag">Database</span><span class="tag">Traceability</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center reveal">
+          <p class="text-indigo-600 font-bold uppercase tracking-widest text-sm">Education</p>
+          <h2 class="mt-3 text-4xl font-extrabold">Academic journey</h2>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <div class="card p-7 rounded-3xl bg-slate-50 border border-slate-200 reveal">
+            <span class="text-indigo-600 font-bold text-sm">CURRENT</span>
+            <h3 class="mt-3 text-xl font-extrabold">Master of Computer Applications</h3>
+            <p class="mt-2 font-semibold">Sanjivani University, Kopargaon</p>
+            <p class="mt-3 text-slate-600">MCA — Pursuing</p>
+          </div>
+
+          <div class="card p-7 rounded-3xl bg-slate-50 border border-slate-200 reveal">
+            <span class="text-cyan-600 font-bold text-sm">COMPLETED</span>
+            <h3 class="mt-3 text-xl font-extrabold">Bachelor of Computer Applications</h3>
+            <p class="mt-2 font-semibold">Rajashri Shahu Mahavidyalaya</p>
+            <p class="mt-3 text-slate-600">BCA — Computer Applications</p>
+          </div>
+
+          <div class="card p-7 rounded-3xl bg-slate-50 border border-slate-200 reveal">
+            <span class="text-violet-600 font-bold text-sm">SCHOOL</span>
+            <h3 class="mt-3 text-xl font-extrabold">Higher & Secondary Education</h3>
+            <p class="mt-2 font-semibold">Deolali Pravara</p>
+            <p class="mt-3 text-slate-600">Academic foundation in Maharashtra</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-slate-950 text-white">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="reveal">
+            <p class="text-indigo-400 font-bold uppercase tracking-widest text-sm">Contact</p>
+            <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold">Let's build something useful.</h2>
+            <p class="mt-5 text-slate-400 leading-8 max-w-lg">
+              I'm interested in internships, entry-level technology roles and practical
+              projects where I can learn, contribute and grow.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <a href="mailto:your-email@example.com" class="block p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                <span class="text-slate-400 text-sm">Email</span>
+                <p class="font-bold mt-1">kartikmusmade21@gmail.com</p>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" class="block p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
+                <span class="text-slate-400 text-sm">LinkedIn</span>
+                <p class="font-bold mt-1">www.linkedin.com/in/kartik-musmade-b46902295 ↗</p>
+              </a>
+            </div>
+          </div>
+
+          <form id="contactForm" class="bg-white text-slate-800 rounded-3xl p-7 sm:p-9 reveal">
+            <h3 class="text-2xl font-extrabold">Send a message</h3>
+
+            <label class="block mt-6 text-sm font-bold">Name
+              <input id="name" required class="mt-2 w-full px-4 py-3 rounded-xl border border-slate-300 outline-none focus:ring-2 focus:ring-indigo-500" type="text" placeholder="Your name">
+            </label>
+
+            <label class="block mt-4 text-sm font-bold">Email
+              <input id="email" required class="mt-2 w-full px-4 py-3 rounded-xl border border-slate-300 outline-none focus:ring-2 focus:ring-indigo-500" type="email" placeholder="you@example.com">
+            </label>
+
+            <label class="block mt-4 text-sm font-bold">Message
+              <textarea id="message" required rows="5" class="mt-2 w-full px-4 py-3 rounded-xl border border-slate-300 outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Write your message..."></textarea>
+            </label>
+
+            <button class="mt-5 w-full py-3.5 rounded-xl bg-indigo-600 text-white font-extrabold hover:bg-indigo-700 transition" type="submit">
+              Send via Email
+            </button>
+            <p id="formNote" class="hidden mt-3 text-sm text-center text-slate-500">
+              Your email app should open with the message prepared.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-black text-slate-400 py-7">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-3 text-sm">
+      <p>© <span id="year"></span> Kartik Namdeo Musmade. All rights reserved.</p>
+      <p>Designed & developed with HTML, Tailwind CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <style>
+    .tag {
+      display:inline-flex; align-items:center; padding:.45rem .7rem; border-radius:.7rem;
+      background:#eef2ff; color:#4338ca; font-size:.78rem; font-weight:700;
+    }
+  </style>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mobileMenu.classList.add("hidden")));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          entry.target.querySelectorAll?.(".skill-fill").forEach(bar => bar.style.width = bar.dataset.width);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const recipient = "your-email@example.com"; // CHANGE THIS
+      const subject = encodeURIComponent("Portfolio Contact from " + name);
+      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      document.getElementById("formNote").classList.remove("hidden");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
